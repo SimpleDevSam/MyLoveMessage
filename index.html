@@ -51,6 +51,10 @@
       max-height: 180px;
       overflow: scroll;
     }
+    #massageButton {
+      margin-top: 1rem;
+      display: none;
+    }
     #errorMessage {
       color: red;
       margin-top: 1rem;
@@ -77,9 +81,12 @@
     <p>Qual dia foi nosso primeiro encontro?</p>
     <input type="text" id="dateInput" placeholder="e.g. 01/01/2020" />
     <br />
-    <button onclick="checkDate()">Submit</button>
+    <button onclick="checkDate()">Responder</button>
     <div id="errorMessage"></div>
-    <div id="secretMessage">Mensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para paloma</div>
+    <div id="secretMessage">
+      Mensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para palomaMensagem de amor que vou escrever para paloma
+    </div>
+    <button id="massageButton" onclick="showMassageReward()">Clique aqui para sua surpresa</button>
   </div>
 
   <script>
@@ -88,14 +95,21 @@
       const correct = '07/09/2022';
       const errorMessage = document.getElementById('errorMessage');
       const secretMessage = document.getElementById('secretMessage');
+      const massageButton = document.getElementById('massageButton');
 
       if (input === correct.toLowerCase()) {
         errorMessage.textContent = '';
         secretMessage.style.display = 'block';
+        massageButton.style.display = 'inline-block';
       } else {
-        errorMessage.textContent = 'Hmm, try again my love...';
+        errorMessage.textContent = 'Tenta de novo meu amorzinho...';
         secretMessage.style.display = 'none';
+        massageButton.style.display = 'none';
       }
+    }
+
+    function showMassageReward() {
+      alert("Você ganhou um vale-massagem, favor comparecer no endereço Rua Tapajós, 336 - Melo sexta-feira dia 13/06 às 16:45 para sessão de massoterapia relaxante com a massoterapeuta Vanessa");
     }
   </script>
 </body>
